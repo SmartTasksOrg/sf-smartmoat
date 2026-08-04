@@ -20,23 +20,18 @@ pip install smartmoat
 smartmoat --demo        # run against the bundled demo
 ```
 
-## Use it anywhere
+## Run it in your stack
 
-The whole family (and its **IAIso starter kits**) covers Python, Node / TypeScript, Go, Java, PHP, Rust:
-
-| You work in… | Do this |
+| Where you work | How you run it |
 |---|---|
 | **Python** | `pip install smartmoat` |
-| **Node / TypeScript** | `npx smartmoat-check .` |
-| **Go** | `go run github.com/SmartTasksOrg/smartmoat/ports/go .` |
-| **Java** | `java -jar smartmoat-check.jar .` |
-| **PHP** | `php ports/php/smartmoat-check.php .` |
-| **Rust** | `cargo run -p smartmoat-check .` |
-| **AI coding tools** (Cursor, Claude, Cline, Windsurf, Zed) | add the MCP server: `{ "command": "smartmoat-mcp" }` |
-| **CI / pre-commit** | drop in `.pre-commit-hooks.yaml` |
+| **CI / pre-commit** | add the hook from [`.pre-commit-hooks.yaml`](.pre-commit-hooks.yaml) |
 
-Starter kits for every language live in the **[IAIso repo](https://github.com/SmartTasksOrg/IAIso)** so you can
-adopt the whole standard in the stack you already use.
+## What's in this repo
+
+- **Core engine** — [`src/smartmoat/`](src/smartmoat/): score() -> MoatScore; plan() -> Plan. Deterministic, dependency-free.
+- **CLI** — `smartmoat --demo` (and `--version`): a deterministic demo of the core.
+- **Also included** — a runnable [`demo/`](demo/), [`examples/`](examples/), the IAIso mapping [`spec/iaiso-map.json`](spec/iaiso-map.json), a browser [`site/playground.html`](site/playground.html), plus public smoke tests in `tests/`.
 
 ## How it works
 
