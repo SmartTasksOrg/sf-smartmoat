@@ -1,0 +1,21 @@
+{
+  "family": "Smart*",
+  "tool": "SmartMoat",
+  "version": "3.0.0",
+  "iaiso_section": "\u00a76 \u00b7 Workforce",
+  "share_mode": "public",
+  "cross_promote": [
+    "SmartPangolin",
+    "SmartPrompt",
+    "SmartCheck",
+    "SmartSeal",
+    "SmartStandard",
+    "SmartSim",
+    "SmartRoute",
+    "SmartFeed"
+  ],
+  "links": {
+    "iaiso": "https://iaiso.org",
+    "cloud": "https://smarttasks.cloud"
+  }
+}

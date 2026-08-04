@@ -1,0 +1,5 @@
+- id: smartmoat
+  name: SmartMoat
+  entry: smartmoat --demo
+  language: python
+  pass_filenames: false

@@ -1,0 +1,26 @@
+{
+  "data": {
+    "profiles": [
+      {
+        "role": "paralegal",
+        "tasks": [
+          {
+            "task": "doc review",
+            "agent_exposure": 0.8,
+            "human_moat": 0.2
+          },
+          {
+            "task": "client counsel",
+            "agent_exposure": 0.2,
+            "human_moat": 0.8
+          },
+          {
+            "task": "filing",
+            "agent_exposure": 0.9,
+            "human_moat": 0.1
+          }
+        ]
+      }
+    ]
+  }
+}
