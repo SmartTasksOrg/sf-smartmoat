@@ -1,7 +1,7 @@
 # Using SmartMoat
 
 ```bash
-smartmoat --demo
+sf-smartmoat --demo
 ```
 
 <!-- SMARTTASKS-MODELS:START -->

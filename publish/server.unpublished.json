@@ -1,16 +1,16 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.smarttasksorg/smartmoat",
+  "name": "io.github.smarttasksorg/sf-smartmoat",
   "description": "Know your moat. Score the tasks AI can't easily take \u2014 and widen them.",
   "version": "3.0.0",
   "repository": {
-    "url": "https://github.com/SmartTasksOrg/smartmoat",
+    "url": "https://github.com/SmartTasksOrg/sf-smartmoat",
     "source": "github"
   },
   "packages": [
     {
       "registryType": "pypi",
-      "identifier": "smartmoat",
+      "identifier": "sf-smartmoat",
       "version": "3.0.0",
       "transport": {
         "type": "stdio"

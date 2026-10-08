@@ -3,23 +3,23 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "smartmoat"
+name = "sf-smartmoat"
 version = "3.0.0"
 description = "Know your moat. Score the tasks AI can't easily take — and widen them."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "Apache-2.0" }
 authors = [{ name = "SmartTasks Lab" }]
-keywords = ["smart", "ai", "iaiso", "smartmoat", "devtools"]
+keywords = ["smart", "ai", "iaiso", "sf-smartmoat", "devtools"]
 dependencies = []
 
 [project.urls]
 Homepage = "https://smarttasks.cloud"
 Standard = "https://iaiso.org"
-Repository = "https://github.com/SmartTasksOrg/smartmoat"
+Repository = "https://github.com/SmartTasksOrg/sf-smartmoat"
 
 [project.scripts]
-smartmoat = "smartmoat.cli:main"
+sf-smartmoat = "sf_smartmoat.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
