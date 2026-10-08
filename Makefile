@@ -1,5 +1,5 @@
 test:
-	python tests/test_smartmoat.py
+	python -m pytest -q
 demo:
 	python -m sf_smartmoat --demo
 build:
