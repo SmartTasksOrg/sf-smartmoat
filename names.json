@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "repo": "SmartTasksOrg/smartmoat",
+  "checked_on": "2026-10-08",
+  "names": [
+    {
+      "registry": "pypi",
+      "name": "smartmoat",
+      "registered": false,
+      "workflow": "release.yml",
+      "note": "first release pending; README in state A"
+    },
+    {
+      "registry": "mcp",
+      "name": "io.github.smarttasksorg/smartmoat",
+      "registered": false
+    }
+  ],
+  "third_party": {
+    "pypi": [
+      "pip",
+      "build",
+      "pytest"
+    ],
+    "npm": []
+  },
+  "local_images": [],
+  "git_owners": [
+    "SmartTasksOrg"
+  ],
+  "exclude_paths": []
+}
