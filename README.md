@@ -1,4 +1,4 @@
-<!-- mcp-name: io.github.smarttasksorg/sf-smartmoat · part of the Smart* family -->
+<!-- mcp-name: io.github.smarttasksorg/sf-smartmoat -->
 <h1 align="center">🦔 SmartMoat</h1>
 <p align="center"><b>Know your moat. Score the tasks AI can't easily take — and widen them.</b></p>
 <p align="center">
@@ -15,14 +15,30 @@ As AI reshapes how we work, a new gap opens: your tasks are automating and you d
 `score` at the exact moment the gap bites, and it works the second you clone it
 (a synthetic demo ships in `demo/`).
 
-SmartMoat is not published on PyPI yet. Until this README says otherwise, a package called `smartmoat` on any registry is not ours.
+## Install
+
+SmartMoat is not published on PyPI or any other package registry yet. Until
+this section says otherwise, a package called `sf-smartmoat` on any registry
+is not ours, and neither is `smartmoat`.
+
+Install from a clone (Python 3.10 or later):
 
 ```bash
 git clone https://github.com/SmartTasksOrg/sf-smartmoat
 cd sf-smartmoat
+python -m venv .venv
+. .venv/bin/activate          # Windows PowerShell: .\.venv\Scripts\Activate.ps1
 python -m pip install .
-sf-smartmoat --demo        # run against the bundled demo
+sf-smartmoat --demo
 ```
+
+## Status
+
+- **Version 3.0.0, experimental.** A small deterministic command-line tool with a bundled synthetic demo and two smoke tests.
+- **Published:** nowhere yet; install from a clone (above).
+- **Tested:** the 2 smoke tests in `tests/` on Python 3.12, Linux, on every push to master and every pull request (`.github/workflows/ci.yml`).
+- **Not tested:** Windows and macOS; Python versions other than 3.12.
+- **Security review:** none independent. Report vulnerabilities as described in [SECURITY.md](SECURITY.md).
 
 ## Run it in your stack
 
