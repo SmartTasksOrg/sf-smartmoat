@@ -1,4 +1,4 @@
-"""SmartMoat CLI — run `smartmoat --demo`."""
+"""SmartMoat CLI — run `sf-smartmoat --demo`."""
 import os, sys, json
 from . import core
 from ._version import __version__
