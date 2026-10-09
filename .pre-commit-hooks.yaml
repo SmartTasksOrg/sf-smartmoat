@@ -1,5 +1,5 @@
-- id: smartmoat
+- id: sf-smartmoat
   name: SmartMoat
-  entry: smartmoat --demo
+  entry: sf-smartmoat --demo
   language: python
   pass_filenames: false
