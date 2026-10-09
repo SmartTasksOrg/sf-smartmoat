@@ -1,18 +1,24 @@
 {
   "schema": 1,
-  "repo": "SmartTasksOrg/smartmoat",
+  "repo": "SmartTasksOrg/sf-smartmoat",
   "checked_on": "2026-10-08",
   "names": [
     {
       "registry": "pypi",
-      "name": "smartmoat",
+      "name": "sf-smartmoat",
       "registered": false,
       "workflow": "release.yml",
       "note": "first release pending; README in state A"
     },
     {
+      "registry": "pypi",
+      "name": "smartmoat",
+      "registered": false,
+      "note": "not used by the family: packages are published as sf-<name>; never install this name"
+    },
+    {
       "registry": "mcp",
-      "name": "io.github.smarttasksorg/smartmoat",
+      "name": "io.github.smarttasksorg/sf-smartmoat",
       "registered": false
     }
   ],

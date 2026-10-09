@@ -1,4 +1,4 @@
-from smartmoat import cli
+from sf_smartmoat import cli
 
 def test_demo_runs():
     assert cli.main(["--demo"]) == 0
