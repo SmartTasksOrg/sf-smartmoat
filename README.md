@@ -17,11 +17,23 @@ As AI reshapes how we work, a new gap opens: your tasks are automating and you d
 
 ## Install
 
-SmartMoat is not published on PyPI or any other package registry yet. Until
-this section says otherwise, a package called `sf-smartmoat` on any registry
-is not ours, and neither is `smartmoat`.
+```bash
+python -m pip install sf-smartmoat
+sf-smartmoat --demo
+```
 
-Install from a clone (Python 3.10 or later):
+Every file of `sf-smartmoat` on PyPI is built and published by this repository's release
+workflow (`.github/workflows/release.yml`, PyPI trusted publishing) and carries a
+provenance attestation that names this repository and that workflow; PyPI shows
+it under "Verified details". The same workflow records a GitHub attestation for
+the same files, which you can check with
+`gh attestation verify <file> --repo SmartTasksOrg/sf-smartmoat`. A release file without
+that provenance is not ours, and neither is a package called `smartmoat` (without
+`sf-`) on any registry.
+
+Version 3.0.0 (published 2026-10-09) is the first release under this name.
+
+To install from a clone instead (Python 3.10 or later):
 
 ```bash
 git clone https://github.com/SmartTasksOrg/sf-smartmoat
@@ -35,7 +47,7 @@ sf-smartmoat --demo
 ## Status
 
 - **Version 3.0.0, experimental.** A small deterministic command-line tool with a bundled synthetic demo and two smoke tests.
-- **Published:** nowhere yet; install from a clone (above).
+- **Published:** PyPI `sf-smartmoat` (see Install). Nothing else is published.
 - **Tested:** the 2 smoke tests in `tests/` on Python 3.12, Linux, on every push to master and every pull request (`.github/workflows/ci.yml`).
 - **Not tested:** Windows and macOS; Python versions other than 3.12.
 - **Security review:** none independent. Report vulnerabilities as described in [SECURITY.md](SECURITY.md).
@@ -150,7 +162,7 @@ Open [`site/playground.html`](site/playground.html) for the interactive version.
 
 ## Part of the Smart* family
 
-One system, not nine projects — same mascot, same manifesto voice, same rule-ID style,
+One system, not separate projects — same mascot, same manifesto voice, same rule-ID style,
 all aligned to the [IAIso standard](https://github.com/SmartTasksOrg/IAIso). Each is an independent, open-source, single-purpose tool you can integrate into your own architecture:
 
 | Tool | IAIso | What it does |
@@ -163,6 +175,8 @@ all aligned to the [IAIso standard](https://github.com/SmartTasksOrg/IAIso). Eac
 | [SmartSim](https://github.com/SmartTasksOrg/sf-smartsim) | §8 · Foresight | Simulate before it hits you. See your role's task-by-task collapse sequence. |
 | [SmartRoute](https://github.com/SmartTasksOrg/sf-smartroute) | §5 · Orchestration | Route only what you trust. Gate agents and tools with trust scores and guardrails. |
 | [SmartFeed](https://github.com/SmartTasksOrg/sf-smartfeed) | §9 · Awareness | Distill the firehose. A tight brief of only what moves your work. |
+
+Also in the family: [SmartDelegate](https://github.com/SmartTasksOrg/sf-smartdelegate) (IAM for LLM agents: one role for one task), [SmartFabric](https://github.com/SmartTasksOrg/sf-smartfabric) (the IAIso Fabric Protocol reference implementation), [SmartLLMCost](https://github.com/SmartTasksOrg/sf-smartllmcost) (dollars per successful task across models) and [SmartPolicyTranslator](https://github.com/SmartTasksOrg/sf-smartpolicytranslator) (regulation text to IAIso policy files). All 13 Smart* tools are on PyPI under their `sf-` names; a package without the `sf-` prefix is not ours.
 
 **Backed by the standard:** SmartMoat implements **IAIso §6 · Workforce**.
 **Open-source edition:** this repo is the simplified, single-purpose version, built for any org to integrate into its own architecture. SmartTasks' desktop app and [SmartTasks.cloud](https://smarttasks.cloud) run a more advanced, deeply-integrated implementation of the same IAIso governance — a separate product, not this code bundled.
