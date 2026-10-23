@@ -46,9 +46,10 @@ sf-smartmoat --demo
 
 ## Status
 
-- **Version 3.0.0, experimental.** A small deterministic command-line tool with a bundled synthetic demo and two smoke tests.
+- **Version 3.0.0, experimental (alpha).** A small deterministic command-line tool with a bundled synthetic demo. The version number does not mean the tool is mature: PyPI classifies it as "Development Status :: 3 - Alpha".
+- **Scope:** `score()` reads the sample profile in `demo/` when run from a clone, and a built-in one-task profile when installed from PyPI. It does not model your own role yet.
 - **Published:** PyPI `sf-smartmoat` (see Install). Nothing else is published.
-- **Tested:** the 2 smoke tests in `tests/` on Python 3.12, Linux, on every push to master and every pull request (`.github/workflows/ci.yml`).
+- **Tested:** the 7 tests in `tests/` (2 smoke tests of the demo and 5 behaviour tests of `core`, in `tests/test_behaviour.py`) on Python 3.12, Linux, on every push to master and every pull request (`.github/workflows/ci.yml`).
 - **Not tested:** Windows and macOS; Python versions other than 3.12.
 - **Security review:** none independent. Report vulnerabilities as described in [SECURITY.md](SECURITY.md).
 
