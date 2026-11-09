@@ -1,7 +1,7 @@
 {
   "tool": "SmartMoat",
   "package": "smartmoat",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "iaiso_section": "\u00a76 \u00b7 Workforce",
   "rule_prefix": "MOAT-*",
   "conforms_to": "https://github.com/SmartTasksOrg/IAIso",
