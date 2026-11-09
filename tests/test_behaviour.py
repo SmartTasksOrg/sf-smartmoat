@@ -33,3 +33,52 @@ def test_a_wider_moat_gets_fewer_moves_but_never_fewer_than_three():
 def test_moves_come_in_a_fixed_order():
     moves = core.plan(MoatScore(1.0, 0.0, 0)).moves
     assert moves[0].startswith("Double down") and moves[-1].startswith("Publish")
+
+
+import json
+
+import pytest
+
+PROFILES = {"profiles": [
+    {"role": "paralegal", "tasks": [
+        {"task": "doc review", "agent_exposure": 0.9, "hours": 30},
+        {"task": "client counsel", "agent_exposure": 0.1, "hours": 10}]},
+    {"role": "nurse", "tasks": [{"task": "triage", "agent_exposure": 0.2}]}]}
+
+
+def test_your_own_profiles_are_scored_and_weighted_by_hours():
+    s = core.score("paralegal", PROFILES)
+    assert s.exposure == 0.7 and s.moat == 0.3          # (0.9*30 + 0.1*10) / 40
+    assert core.score("nurse", PROFILES).moat == 0.8
+
+
+def test_an_unknown_role_in_your_profiles_is_an_error():
+    with pytest.raises(ValueError, match="have: paralegal, nurse"):
+        core.score("pilot", PROFILES)
+
+
+@pytest.mark.parametrize("bad", [
+    [], {"profiles": [{"role": "x", "tasks": []}]},
+    {"profiles": [{"role": "x", "tasks": [{"agent_exposure": 1.5}]}]},
+    {"profiles": [{"role": "x", "tasks": [{"agent_exposure": 0.5, "hours": -1}]}]},
+    {"profiles": [{"role": "x", "tasks": [{"agent_exposure": 0.5}]}, {"role": "x", "tasks": [{"agent_exposure": 0.5}]}]},
+])
+def test_profiles_are_validated(bad):
+    with pytest.raises(ValueError):
+        core.score(None, bad)
+
+
+def test_plan_for_names_your_tasks():
+    moves = core.plan_for("paralegal", PROFILES).moves
+    assert moves[0] == "Hand off or redesign first: doc review."
+    assert moves[1] == "Invest in what agents can't do yet: client counsel."
+    assert moves[2].startswith("Double down")
+
+
+def test_cli_scores_a_file(tmp_path, capsys):
+    from sf_smartmoat import cli
+    f = tmp_path / "roles.json"
+    f.write_text(json.dumps(PROFILES))
+    assert cli.main([str(f), "--role", "paralegal", "--json"]) == 0
+    out = json.loads(capsys.readouterr().out)
+    assert out["score"]["moat"] == 0.3 and out["tasks"][0]["name"] == "doc review"

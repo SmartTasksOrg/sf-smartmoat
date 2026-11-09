@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### Added
+- `score(role, profiles)`, `tasks()` and `plan_for()` work on your own profiles; an unknown role is an error instead of silently using the first profile.
+- Hours-weighted exposure; `load_profiles()` with validation.
+- CLI: `sf-smartmoat PROFILES.json [--role ROLE] [--json]`.
+
+### Fixed
+- The demo no longer calls the moat a percentile.
+
+### Tests
+- `tests/test_behaviour.py` now has 14 behaviour tests covering real input, validation and the CLI.
+
 ### Tests
 - `tests/test_behaviour.py`: 5 behaviour tests of `core` (every rule or formula, edge cases and the fallbacks), next to the 2 smoke tests of the demo.
 
