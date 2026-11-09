@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 3.1.0
 
 ### Added
 - `score(role, profiles)`, `tasks()` and `plan_for()` work on your own profiles; an unknown role is an error instead of silently using the first profile.
@@ -12,9 +12,6 @@
 
 ### Tests
 - `tests/test_behaviour.py` now has 14 behaviour tests covering real input, validation and the CLI.
-
-### Tests
-- `tests/test_behaviour.py`: 5 behaviour tests of `core` (every rule or formula, edge cases and the fallbacks), next to the 2 smoke tests of the demo.
 
 ### Documentation
 - README "Status": says the tool is an alpha whatever its version number, how many tests it has, and what `core` does and does not do today.
